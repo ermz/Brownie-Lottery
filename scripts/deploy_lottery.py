@@ -16,10 +16,10 @@ def deploy_lottery():
     return lottery
 
 def start_lottery():
-    account = get_account()
+    account = get_account(id="local_deployment_account")
     lottery = Lottery[-1]
-    # starting_tx = lottery.startLottery({"from": account})
-    # starting_tx.wait(1)
+    starting_tx = lottery.startLottery({"from": account})
+    starting_tx.wait(1)
     print("Lottery started!!")
 
 def main():
